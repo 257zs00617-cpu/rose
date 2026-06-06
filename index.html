@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ろせのポートフォリオ</title>
+    <title>ろせのダイス・スタジオ</title>
     <style>
       /* 全体のスタイル設定 */
       body {
@@ -111,6 +111,96 @@
         margin-right: 5px;
       }
 
+      /* --- ダイス機能の追加スタイル --- */
+      .dice-panel {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        align-items: center;
+        background: #f3e5f5;
+        padding: 20px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+      }
+      .dice-select-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .dice-select-group select {
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 1px solid #b39ddb;
+        font-size: 1rem;
+        background: #fff;
+      }
+      .dice-btn {
+        background: linear-gradient(135deg, #7b1fa2 0%, #4a148c 100%);
+        color: white;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: transform 0.1s, opacity 0.2s;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      }
+      .dice-btn:hover {
+        opacity: 0.9;
+      }
+      .dice-btn:active {
+        transform: scale(0.95);
+      }
+      .dice-result-container {
+        min-height: 80px;
+        background: #fafafa;
+        border: 2px dashed #b39ddb;
+        border-radius: 6px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .dice-list {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .dice-individual {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        background: #764ba2;
+        color: white;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+      }
+      /* ダイスが振られたときのアニメーション */
+      .rolling {
+        animation: rollEffect 0.4s ease-out;
+      }
+      @keyframes rollEffect {
+        0% { transform: rotate(0deg) scale(0.5); opacity: 0.5; }
+        50% { transform: rotate(180deg) scale(1.2); }
+        100% { transform: rotate(360deg) scale(1); opacity: 1; }
+      }
+      .total-score {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #4a148c;
+      }
+      .placeholder-text {
+        color: #888;
+        font-style: italic;
+      }
+
       /* フッター */
       footer {
         text-align: center;
@@ -125,9 +215,50 @@
     <div class="container">
       
       <header>
-        <h1>ろせ / Rose</h1>
+        <h1>ろせのダイス・スタジオ</h1>
         <p>ZEN大学で新しいクリエイティブに挑戦中</p>
       </header>
+
+      <section id="dice-roller">
+        <h2>Dice Roller</h2>
+        <p>スタジオへようこそ！TRPGのセッションや運試しに、いつでもダイスを振っていってください。</p>
+        
+        <div class="dice-panel">
+          <div class="dice-select-group">
+            <select id="dice-count">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+            <span>個の</span>
+          </div>
+          
+          <div class="dice-select-group">
+            <select id="dice-sides">
+              <option value="6">6面体 (D6)</option>
+              <option value="4">4面体 (D4)</option>
+              <option value="8">8面体 (D8)</option>
+              <option value="10">10面体 (D10)</option>
+              <option value="12">12面体 (D12)</option>
+              <option value="20">20面体 (D20)</option>
+              <option value="100">100面体 (D100)</option>
+            </select>
+            <span>を...</span>
+          </div>
+
+          <button class="dice-btn" onclick="rollDice()">ダイスを振る！</button>
+        </div>
+
+        <div class="dice-result-container">
+          <div id="dice-list" class="dice-list">
+            <span class="placeholder-text">ここにダイスの結果が表示されます</span>
+          </div>
+          <div id="total-score" class="total-score"></div>
+        </div>
+      </section>
 
       <section id="about">
         <h2>About</h2>
@@ -222,6 +353,39 @@
       </footer>
 
     </div>
+
+    <script>
+      function rollDice() {
+        const count = parseInt(document.getElementById('dice-count').value);
+        const sides = parseInt(document.getElementById('dice-sides').value);
+        const diceList = document.getElementById('dice-list');
+        const totalScore = document.getElementById('total-score');
+        
+        // いったん表示をクリア
+        diceList.innerHTML = '';
+        totalScore.innerHTML = '';
+        
+        let total = 0;
+        
+        for (let i = 0; i < count; i++) {
+          // 1から指定の面数までの乱数を生成
+          const result = Math.floor(Math.random() * sides) + 1;
+          total += result;
+          
+          // ダイスの四角い見た目を作成
+          const diceNode = document.createElement('span');
+          diceNode.classList.add('dice-individual', 'rolling');
+          diceNode.innerText = result;
+          
+          diceList.appendChild(diceNode);
+        }
+        
+        // ほんの少し遅らせて合計値を表示（アニメーションに合わせるため）
+        setTimeout(() => {
+          totalScore.innerText = `合計値: ${total} (振った数: ${count}D${sides})`;
+        }, 300);
+      }
+    </script>
 
   </body>
 </html>
