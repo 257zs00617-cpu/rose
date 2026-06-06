@@ -4,78 +4,224 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ろせのポートフォリオ</title>
+    <style>
+      /* 全体のスタイル設定 */
+      body {
+        font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+        line-height: 1.8;
+        color: #333;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      
+      /* ヘッダー・メインタイトル */
+      header {
+        text-align: center;
+        padding: 60px 0 40px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        border-radius: 8px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+      }
+      header p {
+        margin: 10px 0 0;
+        opacity: 0.9;
+        font-size: 1.1rem;
+      }
+
+      /* セクション共通スタイル */
+      section {
+        background: #fff;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      }
+      h2, h3 {
+        color: #4a148c;
+        border-bottom: 2px solid #e0b0ff;
+        padding-bottom: 8px;
+        margin-top: 0;
+      }
+      h3 {
+        border-bottom: 1px solid #ddd;
+        color: #333;
+        margin-top: 20px;
+      }
+
+      /* リストとリンクの装飾 */
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin-bottom: 8px;
+      }
+      a {
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      a:hover {
+        color: #764ba2;
+        text-decoration: underline;
+      }
+
+      /* テーブル（Skills / History）の装飾 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+      th, td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
+      th {
+        width: 25%;
+        color: #4a148c;
+        background-color: #fdfbfe;
+        font-weight: 600;
+      }
+
+      /* タイムライン風の経歴スタイル */
+      .history-table th {
+        width: 25%;
+      }
+      .achievement-badge {
+        display: inline-block;
+        background-color: #e8eaf6;
+        color: #3f51b5;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      /* フッター */
+      footer {
+        text-align: center;
+        padding: 20px;
+        color: #888;
+        font-size: 0.9rem;
+      }
+    </style>
   </head>
   <body>
-    <h1>ろせ</h1>
-    
-    <h2>About</h2>
-    <p>
-      はじめまして！TRPGと音楽が大好きなろせです！<br>
-      趣味で本を書いたり絵を描いたり動画を作ったりいろんなことをしています。
-      ZEN大学でいろんなことに挑戦していきたいなと考えています！
-    </p>
 
-    <h3>Profile</h3>
-    <ul>
-      <li>名前：ろせ</li>
-      <li>在住県：埼玉県</li>
-      <li>得意なこと：謎解き、TRPG、和太鼓</li>
-    </ul>
+    <div class="container">
+      
+      <header>
+        <h1>ろせ / Rose</h1>
+        <p>ZEN大学で新しいクリエイティブに挑戦中</p>
+      </header>
 
-    <h3>Skills</h3>
-    <table>
-      <tr>
-        <th>OS</th>
-        <td>Windows</td>
-      </tr>
-      <tr>
-        <th>Engine, Frameworks</th>
-        <td>Node.js, Express</td>
-      </tr>
-      <tr>
-        <th>Tool, MiddleWare</th>
-        <td>Git, PostgreSQL</td>
-      </tr>
-    </table>
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          はじめまして！TRPGと音楽が大好きな、ろせです！<br>
+          趣味では、世界観を形にするための本（シナリオなど）の執筆、イラスト制作、動画編集など、マルチな創作活動を行っています。現在はZEN大学に身を置き、技術と表現の幅をさらに広げるために様々なことに挑戦しています！
+        </p>
 
-    <h3>Works</h3>
-   <p>趣味で作ったものや地域活動に参加した際の動画です</p>
-    <ul>
-      <li><a href="https://youtu.be/Y-G0FJ9uYoE">動画制作1</a></li>
-      <li><a href="https://youtu.be/AOnI_k709xk">動画制作2</a></li>
-      <li><a href="https://youtube.com/shorts/UnATqBh7GXU?feature=share">和太鼓練習風景</a></li>
-      <li>
-        作成物
+        <h3>Profile</h3>
         <ul>
-          <li><a href="file:///C:/Users/mion0/Downloads/asagiriito/asagiriito.html">ディスプレイ画像 1</a></li>
-          <li><a href="file:///C:/Users/mion0/Downloads/VOID/VOID.html">≪VOID≫ココフォリアデザイン 2</a></li>
+          <li><strong>名前：</strong>ろせ</li>
+          <li><strong>在住県：</strong>埼玉県</li>
+          <li><strong>得意なこと・特技：</strong>謎解き（イベント参加・制作）、TRPG（プレイヤー／ゲームマスター）、和太鼓演奏</li>
         </ul>
-      </li>
-    </ul>
+      </section>
 
-    <h3>Contact</h3>
-    <p>連絡先や SNS のアカウント達です</p>
-    <ul>
-      <li><a href="257zs00617@student.zen.ac.jp">Mail</a></li>
-      <li><a href="https://x.com/srn_knt_0912">X(旧 Twitter)</a></li>
-      <li><a href="https://www.instagram.com/rose_k_15?igsh=MWI1M3hoazA4bG84cQ%3D%3D&utm_source=qr">Instagram</a></li>
-    </ul>
+      <section id="skills">
+        <h2>Skills</h2>
+        <table>
+          <tr>
+            <th>OS</th>
+            <td>Windows</td>
+          </tr>
+          <tr>
+            <th>Engine, Frameworks</th>
+            <td>Node.js, Express</td>
+          </tr>
+          <tr>
+            <th>Tool, MiddleWare</th>
+            <td>Git, PostgreSQL</td>
+          </tr>
+        </table>
+      </section>
 
-    <h3>History</h3>
-    <p>学歴、職歴、アルバイト、インターン経験など。</p>
-    <table>
-      <tr>
-        <th>2019 年</th>
-        <td><a href="https://dwango.co.jp/">株式会社ドワンゴ</a> 入社</td>
-      </tr>
-      <tr>
-        <th>2018 年</th>
-        <td>学校法人角川ドワンゴ学園 <a href="https://nnn.ed.jp/">N高等学校</a> 卒業</td>
-      </tr>
-      <tr>
-        <th>20XX 年</th>
-        <td>表彰、受賞歴、メディア掲載記事などあれば</td>
-      </tr>
-    </table>
+      <section id="works">
+        <h2>Works</h2>
+        <p>趣味で制作した動画や、地域活動での和太鼓演奏の様子です。ぜひご覧ください！</p>
+        <ul>
+          <li><a href="https://youtu.be/Y-G0FJ9uYoE" target="_blank">【動画制作1】趣味の動画作品</a></li>
+          <li><a href="https://youtu.be/AOnI_k709xk" target="_blank">【動画制作2】オリジナルMV・PV</a></li>
+          <li><a href="https://youtube.com/shorts/UnATqBh7GXU?feature=share" target="_blank">【和太鼓】地域活動での練習風景（YouTube Shorts）</a></li>
+          <li>
+            <strong>デザイン・その他作成物</strong>
+            <ul>
+              <li><a href="#" onclick="alert('ローカルファイルのため、Web公開時はサーバーへアップロードが必要です')">ディスプレイ画像 1</a></li>
+              <li><a href="#" onclick="alert('ローカルファイルのため、Web公開時はサーバーへアップロードが必要です')">≪VOID≫ココフォリアデザイン 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section id="history">
+        <h2>History & Achievements</h2>
+        <p>これまでの学歴、職歴、および活動実績です。</p>
+        
+        <table class="history-table">
+          <tr>
+            <th>2022年 (令和4年) 4月</th>
+            <td>学校法人日本財団ドワンゴ学園 <a href="https://nnn.ed.jp/" target="_blank">N高等学校 ネットコース</a> 入学</td>
+          </tr>
+          <tr>
+            <th>2025年 (令和7年) 3月</th>
+            <td>学校法人日本財団ドワンゴ学園 <a href="https://nnn.ed.jp/" target="_blank">N高等学校 ネットコース</a> 卒業</td>
+          </tr>
+          <tr>
+            <th>2025年 (令和7年) 4月</th>
+            <td><strong>学校法人日本財団ドワンゴ学園 <a href="https://www.zen-univ.ac.jp/" target="_blank">ZEN大学</a> 知能情報社会学部</strong> 入学（在学中）</td>
+          </tr>
+          <tr>
+            <th>202X年</th>
+            <td>地域活動にて和太鼓のパフォーマンス・動画記録担当として参加</td>
+          </tr>
+          <tr>
+            <th>20XX年</th>
+            <td><span class="achievement-badge">実績</span> ここに表彰や受賞歴、メディア掲載などがあれば記載</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>お仕事の御依頼やお問い合わせ、各種SNSはこちらからどうぞ。</p>
+        <ul>
+          <li><strong>Mail：</strong><a href="mailto:257zs00617@student.zen.ac.jp">257zs00617@student.zen.ac.jp</a></li>
+          <li><strong>X (旧 Twitter)：</strong><a href="https://x.com/srn_knt_0912" target="_blank">@srn_knt_0912</a></li>
+          <li><strong>Instagram：</strong><a href="https://www.instagram.com/rose_k_15?igsh=MWI1M3hoazA4bG84cQ%3D%3D&utm_source=qr" target="_blank">@rose_k_15</a></li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>&copy; 2026 ろせ All Rights Reserved.</p>
+      </footer>
+
+    </div>
+
   </body>
 </html>
