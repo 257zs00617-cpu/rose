@@ -257,4 +257,156 @@
               <option value="100">100面体 (D100)</option>
               <option value="6">6面体 (D6)</option>
               <option value="4">4面体 (D4)</option>
-              <option value="8">8面
+              <option value="8">8面体 (D8)</option>
+              <option value="10">10面体 (D10)</option>
+              <option value="12">12面体 (D12)</option>
+              <option value="20">20面体 (D20)</option>
+            </select>
+            <span>を...</span>
+          </div>
+
+          <button class="dice-btn" onclick="rollDice()">ダイスを振る！</button>
+        </div>
+
+        <div class="dice-result-container">
+          <div id="dice-list" class="dice-list">
+            <span class="placeholder-text">ここにダイスの結果が表示されます</span>
+          </div>
+          <div id="total-score" class="total-score"></div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          はじめまして！TRPGと音楽が大好きなろせです！<br>
+          趣味では、世界観を形にするための本（シナリオなど）の執筆、イラスト制作、動画編集など、マルチな創作活動を行っています。現在はZEN大学に身を置き、技術と表現の幅をさらに広げるために様々なことに挑戦しています！
+        </p>
+
+        <h3>Profile</h3>
+        <ul>
+          <li><strong>名前：</strong>ろせ</li>
+          <li><strong>在住県：</strong>埼玉県</li>
+          <li><strong>得意なこと・特技：</strong>謎解き（イベント参加・制作）、TRPG（プレイヤー／ゲームマスター）、和太鼓演奏</li>
+        </ul>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <table>
+          <tr>
+            <th>OS</th>
+            <td>Windows</td>
+          </tr>
+          <tr>
+            <th>Engine, Frameworks</th>
+            <td>Node.js, Express</td>
+          </tr>
+          <tr>
+            <th>Tool, MiddleWare</th>
+            <td>Git, PostgreSQL</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="works">
+        <h2>Works</h2>
+        <p>趣味で制作した動画や、地域活動での和太鼓演奏の様子です。ぜひご覧ください！</p>
+        <ul>
+          <li><a href="https://youtu.be/Y-G0FJ9uYoE" target="_blank">【動画制作1】趣味の動画作品</a></li>
+          <li><a href="https://youtu.be/AOnI_k709xk" target="_blank">【動画制作2】オリジナルMV・PV</a></li>
+          <li><a href="https://youtube.com/shorts/UnATqBh7GXU?feature=share" target="_blank">【和太鼓】地域活動での練習風景（YouTube Shorts）</a></li>
+          <li>
+            <strong>デザイン・その他作成物</strong>
+            <ul>
+              <li><a href="#" onclick="alert('ローカルファイルのため、Web公開時はサーバーへアップロードが必要です')">ディスプレイ画像 1</a></li>
+              <li><a href="#" onclick="alert('ローカルファイルのため、Web公開時はサーバーへアップロードが必要です')">≪VOID≫ココフォリアデザイン 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section id="history">
+        <h2>History & Achievements</h2>
+        <p>これまでの学歴、職歴、および活動実績です。</p>
+        
+        <table class="history-table">
+          <tr>
+            <th>2022年 (令和4年) 4月</th>
+            <td>学校法人日本財団ドワンゴ学園 <a href="https://nnn.ed.jp/" target="_blank">N高等学校 ネットコース</a> 入学</td>
+          </tr>
+          <tr>
+            <th>2025年 (令和7年) 3月</th>
+            <td>学校法人日本財団ドワンゴ学園 <a href="https://nnn.ed.jp/" target="_blank">N高等学校 ネットコース</a> 卒業</td>
+          </tr>
+          <tr>
+            <th>2025年 (令和7年) 4月</th>
+            <td><strong>学校法人日本財団ドワンゴ学園 <a href="https://www.zen-univ.ac.jp/" target="_blank">ZEN大学</a> 知能情報社会学部</strong> 入学（在学中）</td>
+          </tr>
+          <tr>
+            <th>2016～2026年</th>
+            <td>地域活動にて和太鼓のパフォーマンスに参加</td>
+          </tr>
+          <tr>
+            <th>2026年4月</th>
+            <td><span class="achievement-badge">実績</span> ZEN大学 展軸祭にて本部ステージ実行委員として活動・登壇</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>お仕事の御依頼やお問い合わせ、各種SNSはこちらからどうぞ。</p>
+        <ul>
+          <li><strong>Mail：</strong><a href="mailto:257zs00617@student.zen.ac.jp">257zs00617@student.zen.ac.jp</a></li>
+          <li><strong>X (旧 Twitter)：</strong><a href="https://x.com/srn_knt_0912" target="_blank">@srn_knt_0912</a></li>
+          <li><strong>Instagram：</strong><a href="https://www.instagram.com/rose_k_15?igsh=MWI1M3hoazA4bG84cQ%3D%3D&utm_source=qr" target="_blank">@rose_k_15</a></li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>&copy; 2026 ろせ All Rights Reserved.</p>
+      </footer>
+
+    </div>
+
+    <script>
+      function rollDice() {
+        const count = parseInt(document.getElementById('dice-count').value);
+        const sides = parseInt(document.getElementById('dice-sides').value);
+        const diceList = document.getElementById('dice-list');
+        const totalScore = document.getElementById('total-score');
+        
+        diceList.innerHTML = '';
+        totalScore.innerHTML = '';
+        
+        let total = 0;
+        
+        for (let i = 0; i < count; i++) {
+          const result = Math.floor(Math.random() * sides) + 1;
+          total += result;
+          
+          const diceNode = document.createElement('span');
+          diceNode.classList.add('dice-individual', 'rolling');
+          diceNode.innerText = result;
+          
+          // 【今回の追加機能】D100の時だけ特定の出目に色クラスを付与する
+          if (sides === 100) {
+            if (result >= 1 && result <= 5) {
+              diceNode.classList.add('dice-critical'); // 1〜5は青
+            } else if (result >= 96 && result <= 100) {
+              diceNode.classList.add('dice-fumble');    // 96〜100は赤
+            }
+          }
+          
+          diceList.appendChild(diceNode);
+        }
+        
+        setTimeout(() => {
+          totalScore.innerText = `合計値: ${total} (振った数: ${count}D${sides})`;
+        }, 300);
+      }
+    </script>
+
+  </body>
+</html>
